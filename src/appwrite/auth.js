@@ -33,8 +33,9 @@ export class AuthService {
             const session = await this.account.createEmailSession(email, password);
             if (session) {
                 window.location.reload(); // Reload the page
+                return session;
             }
-            return session;
+            // return session;
             // return await this.account.createEmailSession(email, password);
         } catch (error) {
             throw error;
@@ -54,7 +55,11 @@ export class AuthService {
     async logout() {
 
         try {
-            await this.account.deleteSessions();
+            const session = await this.account.deleteSessions();
+            if (session) {
+                window.location.reload(); // Reload the page
+                return session;
+            }
         } catch (error) {
             console.log("Appwrite serive :: logout :: error", error);
         }
