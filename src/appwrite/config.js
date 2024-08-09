@@ -22,10 +22,10 @@ export class Service{
                 slug,
                 {
                     title,
+                    content,
                     featuredImage,
                     status,
                     userId,
-                    content
                 }
             )
         } catch (error) {
@@ -41,10 +41,9 @@ export class Service{
                 slug,
                 {
                     title,
-                    
+                    content,
                     featuredImage,
                     status,
-                    content
 
                 }
             )
